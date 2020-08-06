@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../static/css/display--style.css" 
+    	th:href="@{/css/display--style.css}"/>
+</head>
+<body>
+<h1>Student list</h1>
+    <div class="list">
+      <table>
+        <tr>
+          <th>Student Name</th>
+          <th>Student Id</th>
+          <th>Exercises</th>
+          <th>Assignment 1</th>
+          <th>Assignment 2</th>
+          <th>Assignment 3</th>
+          <th>Midterm</th>
+          <th>Final Exam</th>
+          <th>Weighted Average</th>
+          <th>Letter Grade</th>
+        </tr>
+        <tr th:each="student:${students}">
+          <td th:text="${student.studentName}"></td>
+          <td th:text="${student.studentId}"></td>
+          <td th:text="${student.exercises}"></td>
+          <td th:text="${student.assignment1}"></td>
+          <td th:text="${student.assignment2}"></td>
+          <td th:text="${student.assignment3}"></td>
+          <td th:text="${student.midterm}"></td>
+          <td th:text="${student.finalExam}"></td>
+          <td th:text="${student.weightedAverage}"></td>
+          <td th:text="${student.letterGrade}"></td>
+          <td><a href="" th:href="@{/edit/{id}(id=${student.id})}">EDIT</a></td>
+          <td><a href="" th:href="@{/delete/{id}(id=${student.id})}">DELETE</a></td>
+        </tr>
+      </table>
+      <a class="btn-inline" th:href="@{/new}">Add<span>&rarr;</span></a>
+    </div>
+    
+    <h1>Average</h1> 
+    <div class="list">
+      <table>
+        <tr>
+          <th>Exercises Average</th>
+          <th>Assignment 1 Average</th>
+          <th>Assignment 2 Average</th>
+          <th>Assignment 3 Average</th>
+          <th>Midterm Average</th>
+          <th>Final Exam Average</th>
+          <th>Overall Average</th>
+        </tr>
+        <tr>
+          <td th:text="${exercises}"></td>
+          <td th:text="${assignment1}"></td>
+          <td th:text="${assignment2}"></td>
+          <td th:text="${assignment3}"></td>
+          <td th:text="${midterm}"></td>
+          <td th:text="${finalExam}"></td>
+          <td th:text="${weightedAverage}"></td>
+        </tr>
+      </table>
+      <a class="btn-inline" th:href="@{/new}">Add<span>&rarr;</span></a>
+    </div>
+</body>
+</html>

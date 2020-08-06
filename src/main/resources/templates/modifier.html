@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>modify student</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" 
+    	th:href="@{/css/style.css}"/>
+</head>
+<body>
+	<h1>modify Student</h1>
+	<form action="#" th:action="@{/modify}" th:object="${student}">
+	<input type="hidden" name="id" th:value="${student.id}" />
+		<input
+        type="text"
+        name="studentName"
+        class="form__input"
+        placeholder="Student Name"
+        id="studentName"
+        th:field="*{studentName}"
+      />
+      <label for="studentName" class="form__label">Student Name</label>
+      <br />
+ 
+      <input
+        type="text"
+        name="studentId"
+        class="form__input"
+        placeholder="Student Id"
+        id="studentId"
+        th:field="*{studentId}"
+      />
+      <label for="studentId" class="form__label">Student Id</label>
+      <br />
+      
+      <input
+        type="number"
+        name="exercises"
+        class="form__input"
+        placeholder="Excercises"
+        id="exercises"
+        th:field="*{exercises}"
+      />
+      <label for="exercises" class="form__label">Excercises</label>
+      <br />
+      
+      <input
+        type="number"
+        name="assignment1"
+        class="form__input"
+        placeholder="Assignment 1"
+        id="assignment1"
+        th:field="*{assignment1}"
+      />
+      <label for="assignment1" class="form__label">Assignment 1</label>
+      <br />
+      
+      <input
+        type="number"
+        name="assignment2"
+        class="form__input"
+        placeholder="Assignment 2"
+        id="assignment2"
+        th:field="*{assignment2}"
+      />
+      <label for="assignment2" class="form__label">Assignment 2</label>
+      <br />
+      
+      <input
+        type="number"
+        name="assignment3"
+        class="form__input"
+        placeholder="Assignment 3"
+        id="assignment3"
+        th:field="*{assignment3}"
+      />
+      <label for="assignment3" class="form__label">Assignment 3</label>
+      <br />
+      
+      <input
+        type="number"
+        name="midterm"
+        class="form__input"
+        placeholder="Midterm"
+        id="midterm"
+        th:field="*{midterm}"
+      />
+      <label for="midterm" class="form__label">Midterm</label>
+      <br />
+      
+      <input
+        type="number"
+        name="finalExam"
+        class="form__input"
+        placeholder="Final Exam"
+        id="finalExam"
+        th:field="*{finalExam}"
+      />
+      <label for="finalExam" class="form__label">Final Exam</label>
+      <br />
+		<button class="btn-action">SUBMIT</button>
+      <br />
+      <a class="btn-inline" th:href="@{/view}">Show Contact <span>&rarr;</span></a>
+	</form>
+</body>
+</html>

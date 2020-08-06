@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>home</title>
+<link rel="stylesheet" type="text/css" href="../static/css/display--style.css" 
+    	th:href="@{/css/display--style.css}"/>
+</head>
+<body>
+<h1>WelCome to the Page</h1>
+    <div class="list">
+      <a class="btn-inline" th:href="@{/new}">Add Student<span>&rarr;</span></a><br />
+      <a class="btn-inline" th:href="@{/login}">Login<span>&rarr;</span></a><br />
+      <a class="btn-inline" th:href="@{/view}">View Student<span>&rarr;</span></a><br />
+      <div sec:authorize="isAuthenticated()">
+		<form th:action=@{/logout} method="post">
+			<button class="btn-inline">Logout</button>
+		</form>
+	</div>
+    </div>
+</body>
+</html>
